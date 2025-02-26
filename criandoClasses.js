@@ -1,28 +1,41 @@
 //
-class aventureiro{
-    constructor(nome,idade,tipo){
+class Aventureiro {
+    constructor(nome, idade, tipo){
         this.nome = nome;
         this.idade = idade;
-        this.tipo = tipo
+        this.tipo = tipo;
     }
 
-    atacar(){
-        let atque = ""
+    atacar() {
+        let ataque;
 
-        if(atque = "Usou espada"){
-            console.log("Classe Guerreiro")
-        }   else if(ataque = "Usou magia"){
-                console.log("Classe Mago")
-        }       else if (ataque = "Usou Artes Maciais"){
-                    console.log("Classe Monje")
-        }           else if (atque = "Usou Shuriken"){
-                        console.log("Classe Ninja")
-        }               else{
-                            console.log("Classe Renegado")
-        }
+      switch(this.tipo) {
+        case "Guerreiro":
+            ataque = "Espada";
+            break;
+        case "Mago":
+            ataque = "Magia";
+            break;
+        case "Monge":
+            ataque = "Artes Marciais";
+            break;
+        case "Ninja":
+            ataque = "Shuriken";
+            break;
+        default:
+            ataque = "Errou o Ataque";
+      }
+        console.log(`O ${this.tipo} derrotou o inimigo usando ${ataque}`);
     }
 }
 
-let lutador = new aventureiro("Lee",19,Monje);
+const aventureiro1 = new Aventureiro ("Guts",24,"Guerreiro");
+const aventureiro2 = new Aventureiro ("Duck Dodgers",2000,"Mago");
+const aventureiro3 = new Aventureiro ("Lee",13,"Monge");
+const aventureiro4 = new Aventureiro ("Hayabusa",28,"Ninja");
 
-lutador.atacar()
+aventureiro1.atacar();
+aventureiro2.atacar();
+aventureiro3.atacar();
+aventureiro4.atacar();
+//
